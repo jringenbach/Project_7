@@ -30,6 +30,3 @@ class Wikipedia:
         #If the get request failed
         except:
             print("An error occured while looking for wikipedia url")
-
-wiki = Wikipedia("marseille")
-wiki.get_url_from_keyword()
