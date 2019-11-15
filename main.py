@@ -7,11 +7,17 @@ from grandpy.grandpytalk import Grandpytalk
 #Variable instanciation
 parser = Parser()
 grandpy = Grandpytalk()
+wrong_message = True
 
-#Message from grandpy and user
-print(grandpy.intro_message())
-message = input()
+#Message told by grandpy and written by user
+while wrong_message:
+    grandpy.intro_message()
+    message = input()
 
+    #Clean the message and getting data
+    message = parser.clean_message(message)
+    message = parser.parse_message(message)
+    wrong_message = True if message == None else False
 
-#Clean the message and getting data
-parser.clean_message(message)
+    if wrong_message:
+        grandpy.error_message()
