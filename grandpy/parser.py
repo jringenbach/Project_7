@@ -23,3 +23,25 @@ class Parser:
             message = message[:len(message)-1]
 
         return message
+
+
+
+    def clean_accent(self, message):
+        """Replace all the accent with the right letter in the message
+        
+        message : string"""
+
+        accent_dict = {
+            "a" : ["à", "â", "ä"],
+            "e" : ["é", "è", "ê", "ë"],
+            "i" : ["î", "ï"],
+            "o" : ["ö", "ô"],
+            "u" : ["û", "ü"]
+        }
+
+        #For each accent we replace it by the corresponding letter in the message
+        for letter, list_accent in accent_dict.items():
+            for accent_letter in list_accent:
+                message = message.replace(accent_letter, letter)
+
+        return message
