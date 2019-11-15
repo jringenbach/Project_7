@@ -9,7 +9,10 @@ class Wikipedia:
 
     def get_url_from_keyword(self):
         """Get a wikipedia url from a keyword"""
-
+        #geosearch
+        #extract : obtenir contenu d'une page wikipedia sans le markup à partir d'une id
+        #pageids=0000|plaintext=""
+        #prop=info
         params = {"action" : "query" , "format" : "json", "prop" : "info", "generator" : "allpages", "inprop" : "url", "gapfrom" : self.keyword, "aplimit" : 5}
         url = "https://en.wikipedia.org/w/api.php"
 

@@ -18,3 +18,6 @@ class Maps:
             
         except:
             print("An error occured during the request to google map api")
+
+map = Maps("paris")
+print(map.get_coordinates_from_locations())
