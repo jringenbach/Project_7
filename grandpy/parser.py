@@ -6,8 +6,30 @@ class Parser:
 
 
 
+    def clean_accent(self, message):
+        """Replace all the accent with the right letter in the message and return the message
+        
+        message : string"""
+
+        accent_dict = {
+            "a" : ["à", "â", "ä"],
+            "e" : ["é", "è", "ê", "ë"],
+            "i" : ["î", "ï"],
+            "o" : ["ö", "ô"],
+            "u" : ["û", "ü"]
+        }
+
+        #For each accent we replace it by the corresponding letter in the message
+        for letter, list_accent in accent_dict.items():
+            for accent_letter in list_accent:
+                message = message.replace(accent_letter, letter)
+
+        return message
+
+    
+    
     def clean_special_character(self, message):
-        """Clean a string by suppressing the characters (,;:!./§?-_çà and accent)
+        """Clean a string by suppressing the characters (,;:!./§?-_çà and accent) and return the message
         
         message : string"""
 
@@ -26,22 +48,14 @@ class Parser:
 
 
 
-    def clean_accent(self, message):
-        """Replace all the accent with the right letter in the message
+    def clean_message(self, message):
+        """Clean the message by lowering its characters, deleting the accent and special characters.
         
         message : string"""
 
-        accent_dict = {
-            "a" : ["à", "â", "ä"],
-            "e" : ["é", "è", "ê", "ë"],
-            "i" : ["î", "ï"],
-            "o" : ["ö", "ô"],
-            "u" : ["û", "ü"]
-        }
-
-        #For each accent we replace it by the corresponding letter in the message
-        for letter, list_accent in accent_dict.items():
-            for accent_letter in list_accent:
-                message = message.replace(accent_letter, letter)
+        message = message.lower()
+        message = self.clean_accent(message)
+        message = self.clean_special_character(message)
 
         return message
+

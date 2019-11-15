@@ -5,4 +5,4 @@ from grandpy.wikipedia import Wikipedia
 
 parser = Parser()
 message = "Je test des () et des ||-+ pour la méthode clean_message."
-parser.clean_special_character(message)
+parser.clean_message(message)
