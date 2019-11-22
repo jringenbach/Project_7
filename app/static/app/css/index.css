@@ -1,24 +1,41 @@
 /*Button that submits the question to grandpy */
 #button-submit{
-    background-color : #AC3B61;
+    background-color : #5680E9;
+    border : None;
     color : white;
-    height : 50%;
-    margin-left : 60px;
-    padding : 5px;
+    height : 50px;
+    margin-left : 10px;
+    margin-top : 0px;
+    opacity : 0.9;
+    padding : 7px;
+    width : 13%;
+}
+
+#button-submit:hover{
+    opacity : 1;
 }
 
 /*Contains the text input and the send button */
 #question-container{
-    background-color : #EDC7b7;
     height : 100%;
+    margin-left : 0px;
+    padding : 0px;
+    width : 100%;
+}
+
+#question-form{
+    margin-left: 0px;
+    height : 100%;
+    width : 100%;
 }
 
 /*Text input where user asks questions to grandpy */
 #question-input{
+    height : 50px;
     margin-bottom : 10px;
-    margin-top : 10px;
-    height : 80%;
-    width : 80%;
+    margin-top : 15px;
+    padding : 10px;
+    width : 85%;
 }
 
 /* *********************** */
@@ -27,27 +44,26 @@
 
 /* Bubble containing the grandpy message */
 #grandpy-message{
-    background-color : #BAB2B5;
+    background-color : #5680E9;
     border-radius : 5px 0px 5px 0px;
     color : white;
-    margin-bottom : 10px;
     margin-left : 15px;
     margin-right : 50px;
-    margin-top : 20px;
+    margin-top : 2%;
     height : auto;
 }
 
 /* Bubble containing the user message */
 #user-message{
-    background-color : #AC3B61;
+    background-color : #8860D0;
     border-radius : 0px 5px 0px 5px;
-    opacity: 0.8;
     color : white;
-    margin-bottom : 20px;
+    font-weight : 600;
     margin-left : 50px;
     margin-right : 5px;
-    margin-top : 10px;
+    margin-top : 1%;
     height : auto;
+    opacity: 0.8;
 }
 
 /* Balise <p> of the messages */
@@ -58,7 +74,6 @@
 }
 
 #chat-box-container{
-    background-color : #EEE2DC;
     height : 100%;
     width : auto;
 }

@@ -20,9 +20,10 @@
         <div class="row justify-content-start">
             <!-- User messages-->
             <div class="col-5 align-self-start order-first" id="user-message">
-                <p class="message">Salut papy! C'est super de pouvoir enfin te parler, tu es super génial!</p>
+                <p class="message">Bonjour Papy!</p>
             </div>
         </div>
+
     </div>
 
 {% endblock %}
@@ -31,17 +32,13 @@
 
 <!-- Zone where users type their questions to grandpy-->
 {% block footer %}
-<div class="container" id="question-container">
-    <footer>
-        <div id="row d-flex justify-content-center">
-            <form class="col" id="question-form">
-                <input type="text" id="question-input" value="Une question pour papy?">
-                <button type="submit" class="btn btn-primary" id="button-submit">Questionner papy</button>
-            </form>
-
-            </div>
-        </div>
-    </footer>
+<div class="container-fluid" id="question-container">
+    <div class="row" id="question-container-row">
+        <form class="col-12" id="question-form">
+            <input type="text" id="question-input" value="Une question pour papy?">
+            <button type="submit" class="btn btn-primary" id="button-submit">Questionner papy</button>
+        </form>
+    </div>
 </div>
 
 {% endblock %}

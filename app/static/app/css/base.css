@@ -3,17 +3,20 @@
 /* *********************** */
 
 body{
-    background-color : #EDC7b7;
+    background-color : #54B9EA;
     height : 100%;
 }
 
 #title-navbar{
     color : white;
+    font-weight : 600;
+    margin-left : 2%;
 }
 
 /*Navigation bar inside app-header */
 #navigationbar{
-    background-color : #123C69;
+    /*background-color : #123C69;*/
+    background-color : #5680E9;
 }
 
 /*Page containing app-header, app-content and app-footer */
@@ -28,18 +31,18 @@ body{
 
 /*Zone where user types its questions and send them to grandpy */
 .app-footer{
-    grid-column-start : 1;
-    grid-column-end : 20;
+    grid-column-start : 3;
+    grid-column-end : 17;
     grid-row-start: 18;
     grid-row-end : 20;
 }
 
 /*Zone where the contents of the web pages are displayed */
 .app-content{
-    background-color : #EEE2DC;
+    background-color : white;
     border : 1px solid black;
-    grid-column-start : 2;
-    grid-column-end : 18;
+    grid-column-start : 3;
+    grid-column-end : 17;
     grid-row-start: 1;
     grid-row-end : 18;
 }
