@@ -4,29 +4,29 @@ import json
 class Wikipedia:
     """Class that handles every action about the wikipedia API"""
 
-    def __init__(self, keyword):
-        self.keyword = keyword
+    def __init__(self, coordinates):
+        self.lng = coordinates["lng"]
+        self.lat = coordinates["lat"]
 
-    def get_url_from_keyword(self):
+    def get_url_from_coordinates(self):
         """Get a wikipedia url from a keyword"""
         #geosearch
         #extract : obtenir contenu d'une page wikipedia sans le markup à partir d'une id
         #pageids=0000|plaintext=""
         #prop=info
-        params = {"action" : "query" , "format" : "json", "prop" : "info", "generator" : "allpages", "inprop" : "url", "gapfrom" : self.keyword, "aplimit" : 5}
-        url = "https://en.wikipedia.org/w/api.php"
+        params = {"action" : "query" ,
+        "format" : "json",
+        "list" : "geosearch",
+        "gscoord" : str(self.lat)+"|"+str(self.lng),
+        "gsradius" : "1000"}
+        url = "https://fr.wikipedia.org/w/api.php"
 
         #We try a get request on wikipedia API to get an url depending on the keyword we give in parameters
         try:
             r = requests.get(url, params)
             r_json = r.json()
+            print(r_json)
             url = str()
-
-            i=0
-            for page in r_json["query"]["pages"].items():
-                if i == 0:
-                    url = page[1]["fullurl"]
-                    i += 1
 
             return url
 

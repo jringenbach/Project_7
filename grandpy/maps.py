@@ -3,13 +3,13 @@ import json
 
 class Maps:
 
-    def __init__(self, address):
-        self.address = address
+    def __init__(self, message):
+        self.message = message
 
     def get_coordinates_from_locations(self):
         """Get longitude and latitude of a location depending by its name"""
 
-        params = {"address" : self.address, "key" : "AIzaSyDIDOZg2xnz2sAp4wP-1kTDnHwrCZZngTc"}
+        params = {"address" : self.message, "key" : "AIzaSyDIDOZg2xnz2sAp4wP-1kTDnHwrCZZngTc"}
 
         try:
             r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?api=1", params=params)

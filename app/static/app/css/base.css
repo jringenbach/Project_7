@@ -1,0 +1,37 @@
+body{
+    background-color : #EEE2DC;
+    height : 100%;
+}
+
+/*Navigation bar inside app-header */
+#navigationbar{
+    background-color : #EDC7b7;
+}
+
+/*Page containing app-header, app-content and app-footer */
+.page{
+    display: grid;
+    grid-auto-rows : 5%;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: 100%;
+}
+
+/*Zone containing the navigation bar */
+.app-header{
+    grid-row-start : 0;
+    grid-row-end : 1;
+}
+
+/*Zone where the contents of the web pages are displayed */
+.app-content{
+    background-color : white;
+    grid-row-start: 1;
+    grid-row-end : 18;
+}
+
+/*Zone where user types its questions and send them to grandpy */
+.app-footer{
+    grid-row-start: 18;
+    grid-row-end : 20;
+}

@@ -1,0 +1,19 @@
+/*Button that submits the question to grandpy */
+#button-submit{
+    background-color : #AC3B61;
+    color : white;
+    height : 50%;
+    margin-left : 30px;
+}
+
+/*Contains the text input and the send button */
+#question-container{
+    background-color : #EDC7b7;
+    height : 100%;
+}
+
+/*Text input where user asks questions to grandpy */
+#question-input{
+    margin-top : 10px;
+    height : 80%;
+}

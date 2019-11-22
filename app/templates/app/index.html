@@ -1,0 +1,18 @@
+{% extends "/app/base.html" %}
+
+{% block css_scripts %}
+    <link href="{{ url_for('static', filename='app/css/index.css') }}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+<!-- Content of index.html-->
+{% block footer %}
+<div class="container-fluid" id="question-container">
+    <footer>
+        <div id="row">
+            <input type="text" id="question-input" class="col-7" value="Une question pour papy?">
+            <button type="button" class="col-1" class="btn btn-primary" id="button-submit">Primary</button>
+        </div>
+    </footer>
+</div>
+
+{% endblock %}

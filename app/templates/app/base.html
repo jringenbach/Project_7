@@ -1,0 +1,39 @@
+<!--Generic template page for all the html pages of the web app-->
+<html>
+    <head>
+        <title>{{ title }}</title>
+
+        <!--CSS scripts-->
+        <link href="{{ url_for('static', filename='app/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ url_for('static', filename='app/css/base.css') }}" rel="stylesheet" type="text/css" />
+        {% block css_scripts %}{% endblock %}
+    </head>
+    <body>
+        <div class="page">
+
+            <div class="app-header">
+                <!--Navigation bar of the web application : grandpybot-->
+                <nav class="navbar" id="navigationbar">
+                    <a class="navbar-brand" href="/">Grandpybot</a>
+                </nav>
+            </div>
+            
+            <div class="app-content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            
+            <div class="app-footer">
+                {% block footer %}
+                {% endblock %}
+            </div>
+
+        </div>
+
+
+        <!--Javascript scripts-->
+        <script src="{{ url_for('static', filename='app/js/jquery-3.4.1.min.js') }}" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='app/js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
+        {% block javascript_scripts %}{% endblock %}
+    </body>
+</html>

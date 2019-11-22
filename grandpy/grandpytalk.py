@@ -16,6 +16,7 @@ class Grandpytalk:
             "C'est une belle journée pour te parler du monde, n'est-ce pas? De quoi veux-tu que je te parle?"
         ]
 
+        #Remplacer par choice
         random_number = randint(0, len(liste_intro_phrase)-1)
 
         print(liste_intro_phrase[random_number])
@@ -34,4 +35,5 @@ class Grandpytalk:
 
         random_number = randint(0, len(liste_error_phrase)-1)
 
+        #remplacer par choice
         print(liste_error_phrase[random_number])

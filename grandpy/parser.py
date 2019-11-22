@@ -10,13 +10,13 @@ class Parser:
         """Replace all the accent with the right letter in the message and return the message
         
         message : string"""
-
+        #méthode translate
         accent_dict = {
             "a" : ["à", "â", "ä"],
             "e" : ["é", "è", "ê", "ë"],
             "i" : ["î", "ï"],
             "o" : ["ö", "ô"],
-            "u" : ["û", "ü"]
+            "u" : ["û", "ü", "ù"]
         }
 
         #For each accent we replace it by the corresponding letter in the message
@@ -66,7 +66,7 @@ class Parser:
         
         message : string"""
 
-        check_phrase = r"l adresse de (?P<lieu>[^,.;:?]+)[.,;:?]*"
+        check_phrase = r"(adresse de|ou se trouve|informations sur) (?P<lieu>[^,.;:?]+)[.,;:?]*"
         message_parsed = re.search(check_phrase, message)
         if message_parsed is not None:
             message = message_parsed.group("lieu")
