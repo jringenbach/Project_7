@@ -7,18 +7,21 @@
 <!-- T'chat zone with grandpy-->
 {% block content %}
     <div class="container-fluid" id="chat-box-container">
-        <div class="row justify-content-center" id="chat-box">
+
+        <div class="row justify-content-end" id="chat-box">
 
             <!-- Grandpy messages-->
-            <div class="col-5 align-self-end order-last" id="grandpy-message">
-                    <p class="message">{{hello_message}}</p>
-            </div>
-
-            <!-- User messages-->
-            <div class="col-5 align-self-start order-first" id="user-message">
-                <p class="message">Message utilisateur test</p>
+            <div class="col-5 align-self-end" id="grandpy-message">
+                <p class="message">{{hello_message}}</p>
             </div>
             
+        </div>
+
+        <div class="row justify-content-start">
+            <!-- User messages-->
+            <div class="col-5 align-self-start order-first" id="user-message">
+                <p class="message">Salut papy! C'est super de pouvoir enfin te parler, tu es super génial!</p>
+            </div>
         </div>
     </div>
 

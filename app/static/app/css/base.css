@@ -37,6 +37,7 @@ body{
 /*Zone where the contents of the web pages are displayed */
 .app-content{
     background-color : #EEE2DC;
+    border : 1px solid black;
     grid-column-start : 2;
     grid-column-end : 18;
     grid-row-start: 1;
