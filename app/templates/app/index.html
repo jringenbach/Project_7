@@ -6,17 +6,17 @@
 
 <!-- T'chat zone with grandpy-->
 {% block content %}
-    <div class="container-fluid">
-        <div class="row justify-content-center">
+    <div class="container-fluid" id="chat-box-container">
+        <div class="row justify-content-center" id="chat-box">
 
             <!-- User messages-->
             <div class="col-4 align-self-start" id="user-message">
-            
+                <p class="message">Message utilisateur test</p>
             </div>
 
             <!-- Grandpy messages-->
             <div class="col-4 align-self-end" id="grandpy-message">
-                <p>{{hello_message}}</p>
+                <p class="message">{{hello_message}}</p>
             </div>
             
         </div>

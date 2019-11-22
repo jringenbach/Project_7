@@ -3,18 +3,23 @@
 /* *********************** */
 
 body{
-    background-color : #EEE2DC;
+    background-color : #EDC7b7;
     height : 100%;
+}
+
+#title-navbar{
+    color : white;
 }
 
 /*Navigation bar inside app-header */
 #navigationbar{
-    background-color : #EDC7b7;
+    background-color : #123C69;
 }
 
 /*Page containing app-header, app-content and app-footer */
 .page{
     display: grid;
+    grid-auto-columns: 5%;
     grid-auto-rows : 5%;
     grid-template-columns: auto;
     grid-template-rows: auto;
@@ -23,19 +28,25 @@ body{
 
 /*Zone where user types its questions and send them to grandpy */
 .app-footer{
+    grid-column-start : 1;
+    grid-column-end : 20;
     grid-row-start: 18;
     grid-row-end : 20;
 }
 
 /*Zone where the contents of the web pages are displayed */
 .app-content{
-    background-color : white;
+    background-color : #EEE2DC;
+    grid-column-start : 2;
+    grid-column-end : 18;
     grid-row-start: 1;
     grid-row-end : 18;
 }
 
 /*Zone containing the navigation bar */
 .app-header{
+    grid-column-start : 1;
+    grid-column-end : 20;
     grid-row-start : 0;
     grid-row-end : 1;
 }
