@@ -9,14 +9,14 @@
     <div class="container-fluid" id="chat-box-container">
         <div class="row justify-content-center" id="chat-box">
 
-            <!-- User messages-->
-            <div class="col-4 align-self-start" id="user-message">
-                <p class="message">Message utilisateur test</p>
+            <!-- Grandpy messages-->
+            <div class="col-5 align-self-end order-last" id="grandpy-message">
+                    <p class="message">{{hello_message}}</p>
             </div>
 
-            <!-- Grandpy messages-->
-            <div class="col-4 align-self-end" id="grandpy-message">
-                <p class="message">{{hello_message}}</p>
+            <!-- User messages-->
+            <div class="col-5 align-self-start order-first" id="user-message">
+                <p class="message">Message utilisateur test</p>
             </div>
             
         </div>
@@ -28,11 +28,15 @@
 
 <!-- Zone where users type their questions to grandpy-->
 {% block footer %}
-<div class="container-fluid" id="question-container">
+<div class="container" id="question-container">
     <footer>
-        <div id="row align-items-center">
-            <input type="text" id="question-input" class="col-7" value="Une question pour papy?">
-            <button type="button" class="col-1" class="btn btn-primary" id="button-submit">Questionner papy</button>
+        <div id="row d-flex justify-content-center">
+            <form class="col" id="question-form">
+                <input type="text" id="question-input" value="Une question pour papy?">
+                <button type="submit" class="btn btn-primary" id="button-submit">Questionner papy</button>
+            </form>
+
+            </div>
         </div>
     </footer>
 </div>

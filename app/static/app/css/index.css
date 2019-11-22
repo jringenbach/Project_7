@@ -3,7 +3,7 @@
     background-color : #AC3B61;
     color : white;
     height : 50%;
-    margin-left : 30px;
+    margin-left : 60px;
     padding : 5px;
 }
 
@@ -15,8 +15,10 @@
 
 /*Text input where user asks questions to grandpy */
 #question-input{
+    margin-bottom : 10px;
     margin-top : 10px;
     height : 80%;
+    width : 80%;
 }
 
 /* *********************** */
