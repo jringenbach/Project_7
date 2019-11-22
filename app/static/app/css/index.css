@@ -4,6 +4,7 @@
     color : white;
     height : 50%;
     margin-left : 30px;
+    padding : 5px;
 }
 
 /*Contains the text input and the send button */
@@ -16,4 +17,29 @@
 #question-input{
     margin-top : 10px;
     height : 80%;
+}
+
+/* *********************** */
+/*   T'chat zone design    */
+/* *********************** */
+#grandpy-message{
+    background-color : #BAB2B5;
+    border-radius : 5px solid black;
+    color : white;
+    margin-bottom : 20px;
+    margin-left : 15px;
+    margin-right : 15px;
+    margin-top : 20px;
+    height : auto;
+}
+
+#user-message{
+    background-color : #AC3B51;
+    border-radius : 5px solid black;
+    color : white;
+    margin-bottom : 20px;
+    margin-left : 5px;
+    margin-right : 5px;
+    margin-top : 20px;
+    height : auto;
 }

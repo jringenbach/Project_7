@@ -1,9 +1,11 @@
 from grandpy.wikipedia import Wikipedia
 
-def test_get_right_url_on_wikipedia_from_coordinates():
+
+
+def test_get_right_pageid_on_wikipedia_from_coordinates():
+    """Test of Wikipedia.get_pageid_from_coordinates()"""
     coord = {'lat': 43.296482, 'lng': 5.36978}
     wiki = Wikipedia(coord)
-    url_to_test = wiki.get_url_from_coordinates()
-    url_expected = "https://en.wikipedia.org/wiki/Marseille"
+    wiki.get_pageid_from_coordinates()
 
-    assert url_to_test == url_expected
+    assert wiki.pageid == 5673657

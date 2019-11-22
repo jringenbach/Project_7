@@ -3,8 +3,12 @@ import json
 
 class Maps:
 
+
+
     def __init__(self, message):
         self.message = message
+
+
 
     def get_coordinates_from_locations(self):
         """Get longitude and latitude of a location depending by its name"""

@@ -1,3 +1,7 @@
+/* *********************** */
+/*     Page design         */
+/* *********************** */
+
 body{
     background-color : #EEE2DC;
     height : 100%;
@@ -17,10 +21,10 @@ body{
     height: 100%;
 }
 
-/*Zone containing the navigation bar */
-.app-header{
-    grid-row-start : 0;
-    grid-row-end : 1;
+/*Zone where user types its questions and send them to grandpy */
+.app-footer{
+    grid-row-start: 18;
+    grid-row-end : 20;
 }
 
 /*Zone where the contents of the web pages are displayed */
@@ -30,8 +34,10 @@ body{
     grid-row-end : 18;
 }
 
-/*Zone where user types its questions and send them to grandpy */
-.app-footer{
-    grid-row-start: 18;
-    grid-row-end : 20;
+/*Zone containing the navigation bar */
+.app-header{
+    grid-row-start : 0;
+    grid-row-end : 1;
 }
+
+

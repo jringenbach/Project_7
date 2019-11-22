@@ -1,4 +1,10 @@
-from random import randint
+#Python library
+import random
+
+#grandpy libraries
+from grandpy.parser import Parser
+from grandpy.maps import Maps
+from grandpy.wikipedia import Wikipedia
 
 class Grandpytalk:
 
@@ -12,14 +18,12 @@ class Grandpytalk:
             "Ravi de te voir mon enfant. Je peux t'aider?",
             "J'ai tant de souvenirs à partager, dis-moi ce que veux entendre?",
             "Puis-je faire quelque chose pour toi mon petit?",
-            "Dans ma folle jeunesse, j'ai visite plein de lieux. Dis-moi le lieu que tu voudrais me voir te raconter!",
-            "C'est une belle journée pour te parler du monde, n'est-ce pas? De quoi veux-tu que je te parle?"
+            "Dans ma folle jeunesse, j'ai visité plein de lieux. Dis-moi le lieu que tu voudrais me voir te raconter!",
+            "C'est une belle journée pour te parler du monde, n'est-ce pas? De quoi veux-tu que je te parle?",
+            "Tu es venu voir papy pour en savoir plus sur le monde? C'est gentil! :)"
         ]
 
-        #Remplacer par choice
-        random_number = randint(0, len(liste_intro_phrase)-1)
-
-        print(liste_intro_phrase[random_number])
+        return random.choice(liste_intro_phrase)
 
 
     def error_message(self):
@@ -33,7 +37,30 @@ class Grandpytalk:
             "Quelle est ta question? Je n'ai pas bien saisi, pardonne-moi!"
         ]
 
-        random_number = randint(0, len(liste_error_phrase)-1)
+        return random.choice(liste_error_phrase)
 
-        #remplacer par choice
-        print(liste_error_phrase[random_number])
+
+    def ask_grandpy(self, message):
+        """Parse and clean the question sent by the user to grandpy
+            
+        message : string object"""
+
+        grandpy_information = dict()
+        parser = Parser()
+
+        #Clean the message
+        message = parser.clean_message(message)
+        message = parser.parse_message(message)
+
+        #Getting coordinates of location from Google Maps API
+        maps = Maps(message)
+        coordinates = maps.get_coordinates_from_locations()
+        grandpy_information.update({"coordinates" : coordinates})
+
+        #Getting information from Wikipedia Page
+        wiki = Wikipedia(coordinates)
+        wiki.get_pageid_from_coordinates()
+        wiki.get_content_from_pageid()   
+        grandpy_information.update({"content" : wiki.content})
+
+        return grandpy_information

@@ -4,13 +4,35 @@
     <link href="{{ url_for('static', filename='app/css/index.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
-<!-- Content of index.html-->
+<!-- T'chat zone with grandpy-->
+{% block content %}
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+
+            <!-- User messages-->
+            <div class="col-4 align-self-start" id="user-message">
+            
+            </div>
+
+            <!-- Grandpy messages-->
+            <div class="col-4 align-self-end" id="grandpy-message">
+                <p>{{hello_message}}</p>
+            </div>
+            
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+<!-- Zone where users type their questions to grandpy-->
 {% block footer %}
 <div class="container-fluid" id="question-container">
     <footer>
-        <div id="row">
+        <div id="row align-items-center">
             <input type="text" id="question-input" class="col-7" value="Une question pour papy?">
-            <button type="button" class="col-1" class="btn btn-primary" id="button-submit">Primary</button>
+            <button type="button" class="col-1" class="btn btn-primary" id="button-submit">Questionner papy</button>
         </div>
     </footer>
 </div>
