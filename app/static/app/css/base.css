@@ -3,7 +3,7 @@
 /* *********************** */
 
 body{
-    background-color : #54B9EA;
+    background-color : rgb(118, 205, 248);
     height : 100%;
 }
 
@@ -16,7 +16,8 @@ body{
 /*Navigation bar inside app-header */
 #navigationbar{
     /*background-color : #123C69;*/
-    background-color : #5680E9;
+    background-color : rgb(59, 104, 219);
+    border-bottom : 1px solid black;
 }
 
 /*Page containing app-header, app-content and app-footer */

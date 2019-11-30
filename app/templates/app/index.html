@@ -2,24 +2,25 @@
 
 {% block css_scripts %}
     <link href="{{ url_for('static', filename='app/css/index.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ url_for('static', filename='app/css/leaflet.css') }}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 <!-- T'chat zone with grandpy-->
 {% block content %}
     <div class="container-fluid" id="chat-box-container">
 
-        <div class="row justify-content-end" id="chat-box">
+        <div class="row justify-content-end chat-box-line">
 
             <!-- Grandpy messages-->
-            <div class="col-5 align-self-end" id="grandpy-message">
+            <div class="col-5 align-self-end grandpy-message">
                 <p class="message">{{hello_message}}</p>
             </div>
             
         </div>
 
-        <div class="row justify-content-start">
+        <div class="row justify-content-start chat_box_line">
             <!-- User messages-->
-            <div class="col-5 align-self-start order-first" id="user-message">
+            <div class="col-5 align-self-start order-first user-message">
                 <p class="message">Bonjour Papy!</p>
             </div>
         </div>
@@ -34,11 +35,17 @@
 {% block footer %}
 <div class="container-fluid" id="question-container">
     <div class="row" id="question-container-row">
-        <form class="col-12" id="question-form">
-            <input type="text" id="question-input" value="Une question pour papy?">
+        <form class="col-12" id="question-form" method="POST">
+            <input type="text" id="question-input" placeholder="Une question pour papy?">
             <button type="submit" class="btn btn-primary" id="button-submit">Questionner papy</button>
         </form>
     </div>
 </div>
 
+{% endblock %}
+
+{% block javascript_scripts %}
+<script src="{{ url_for('static', filename='app/js/ajax.js') }}"></script>
+<script src="{{ url_for('static', filename='app/js/leaflet.js') }}"></script>
+<script src="{{ url_for('static', filename='app/js/index.js') }}"></script>
 {% endblock %}

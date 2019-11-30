@@ -16,9 +16,10 @@ class Maps:
         params = {"address" : self.message, "key" : "AIzaSyDIDOZg2xnz2sAp4wP-1kTDnHwrCZZngTc"}
 
         try:
-            r = requests.get("https://maps.googleapis.com/maps/api/geocode/json?api=1", params=params)
+            r = requests.get("https://maps.googleapis.com/maps/api/geocode/json", params=params)
             r_json = r.json()
+            print(r_json)
             return r_json["results"][0]["geometry"]["location"]
             
-        except:
-            print("An error occured during the request to google map api")
+        except Exception as e:
+            print(e)
