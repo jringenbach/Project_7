@@ -13,7 +13,8 @@ class Maps:
     def get_coordinates_from_locations(self):
         """Get longitude and latitude of a location depending by its name"""
 
-        params = {"address" : self.message, "key" : "AIzaSyDIDOZg2xnz2sAp4wP-1kTDnHwrCZZngTc"}
+        API_key = self.read_API_Key("api_key_google_maps.txt")
+        params = {"address" : self.message, "key" : API_key}
 
         try:
             r = requests.get("https://maps.googleapis.com/maps/api/geocode/json", params=params)
@@ -23,3 +24,11 @@ class Maps:
             
         except Exception as e:
             print(e)
+
+    
+
+    def read_API_Key(self, filename):
+        """Read the API Key from a file and returns it"""
+
+        with open(filename, "r") as file:
+            return file.readline()

@@ -1,20 +1,18 @@
 function add_map_to_message(lng, lat, title){
     //We get the chat-box-container that contains all the messages of the chat
-    chat_box_container = document.getElementById('chat-box-container');
+    chat_box = document.getElementById('chat-box');
 
     //We add a new message into the chat box
-    chat_box = document.createElement('div');
-    chat_box.className = "row justify-content-end chat-box-line";
-    new_message = document.createElement('div');
-    new_message.className = "col-5 align-self-end grandpy-message";
+    chat_message = document.createElement('section');
+    chat_box.className = "message";
+    new_message = document.createElement('section');
+    new_message.className = "message grandpy-message";
     map_div = document.createElement("div");
     map_div.id = "map";
-    map_div.className = "align-self-center";
 
     //We add everything to the DOM
     new_message.appendChild(map_div);
     chat_box.appendChild(new_message);
-    chat_box_container.appendChild(chat_box);
 
     //We create our map
     var map = L.map("map").setView([lat, lng], 13);
@@ -44,19 +42,15 @@ function add_map_to_message(lng, lat, title){
 
 function add_new_message(papy_is_talking, text_message){
     //We get the chat-box-container that contains all the messages of the chat
-    chat_box_container = document.getElementById('chat-box-container');
+    chat_box = document.getElementById('chat-box');
 
-    //We add a new message into the chat box
-    chat_box = document.createElement('div');
-    new_message = document.createElement('div');
+    new_message = document.createElement('section');
 
     // We set a different style depending if the message comes from papy or the user
     if (papy_is_talking){
-        new_message.className = "col-5 align-self-end grandpy-message";
-        chat_box.className = "row justify-content-end chat-box-line";
+        new_message.className = "message grandpy-message";
     }else{
-        new_message.className = "col-5 align-self-start order-first user-message";
-        chat_box.className = "row justify-content-start chat_box_line";
+        new_message.className = "message user-message";
     }     
     
     //We create a new text_zone with the content of the message
@@ -66,7 +60,6 @@ function add_new_message(papy_is_talking, text_message){
     //We add everything to the DOM
     new_message.appendChild(new_text_node);
     chat_box.appendChild(new_message);
-    chat_box_container.appendChild(chat_box);
 }
 
 //We get the form

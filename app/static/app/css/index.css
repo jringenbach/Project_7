@@ -1,22 +1,24 @@
 /*Button that submits the question to grandpy */
 #button-submit{
-    background-color : #5680E9;
+    background-color : rgb(13, 162, 221);
     border : None;
     color : white;
+    font-weight: 600;
     height : 50px;
     margin-left : 10px;
     margin-top : 0px;
-    opacity : 0.9;
+    opacity : 0.8;
     padding : 7px;
     width : 13.8%;
 }
 
 #button-submit:hover{
+    transition-duration: 0.5s;
     opacity : 1;
 }
 
 #chat-box{
-    background-color : rgb(240, 133, 34);
+    background-color : #ffffff;
     display : flex;
     flex-direction : column;
     height : 90%;
@@ -46,10 +48,6 @@
     width : 85%;
 }
 
-/* *********************** */
-/*   T'chat zone design    */
-/* *********************** */
-
 /* Bubble containing the user message */
 .message{
     border-radius : 0px 5px 0px 5px;
@@ -60,18 +58,19 @@
     margin-left : 50px;
     margin-right : 50px;
     margin-top : 1%;
+    padding: 0.6em 1em 0.6em 1em;
     opacity: 0.8;
     width : 40%;
 }
 
-#grandpy-message{
+.grandpy-message{
     align-self : flex-end;
-    background-color : #8860D0;
+    background-color : rgb(0, 129, 180);
 }
 
-#user-message{
+.user-message{
     align-self : flex-start;
-    background-color : yellow;
+    background-color : rgba(0, 129, 180, 0.7);
 }
 
 #map{
