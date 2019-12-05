@@ -7,25 +7,29 @@
 
 <!-- T'chat zone with grandpy-->
 {% block content %}
-    <div class="container-fluid" id="chat-box-container">
-
-        <div class="row justify-content-end chat-box-line">
+    <section class="container-fluid" id="chat-box-container">
+        
+        <section class="row justify-content-end">
 
             <!-- Grandpy messages-->
             <div class="col-5 align-self-end grandpy-message">
-                <p class="message">{{hello_message}}</p>
+                <section>
+                    <p class="message">{{hello_message}}</p>
+                </section>
             </div>
             
-        </div>
+        </section>
 
-        <div class="row justify-content-start chat_box_line">
+        <section class="row justify-content-start">
             <!-- User messages-->
             <div class="col-5 align-self-start order-first user-message">
-                <p class="message">Bonjour Papy!</p>
+                <section>
+                    <p class="message">Bonjour Papy!</p>
+                </section>
             </div>
-        </div>
+        </section>
 
-    </div>
+    </section>
 
 {% endblock %}
 
