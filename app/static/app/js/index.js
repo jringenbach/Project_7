@@ -1,3 +1,5 @@
+let NUM_MAP = 0;
+
 function add_map_to_message(lng, lat, title){
     //We get the chat-box-container that contains all the messages of the chat
     chat_box = document.getElementById('chat-box');
@@ -8,14 +10,17 @@ function add_map_to_message(lng, lat, title){
     new_message = document.createElement('section');
     new_message.className = "message grandpy-message";
     map_div = document.createElement("div");
-    map_div.id = "map";
+    NUM_MAP += 1
+    map_div.className = "map";
+    map_div.id = "map"+String(NUM_MAP);
+    console.log(map_div.id)
 
     //We add everything to the DOM
     new_message.appendChild(map_div);
     chat_box.appendChild(new_message);
 
     //We create our map
-    var map = L.map("map").setView([lat, lng], 13);
+    var map = L.map("map"+String(NUM_MAP)).setView([lat, lng], 13);
 
     //We set our tileLayers : we get our tiles from OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -77,8 +82,19 @@ form.addEventListener("submit", function(e){
             // Affichage dans la console en cas de succès
             console.log(JSON.parse(reponse));
             data = JSON.parse(reponse);
-            add_map_to_message(data["coordinates"]["lng"], data["coordinates"]["lat"], data["content"]["title"]);
-            add_new_message(true, data["content"]["extract"]);
+
+            //If there was an error while getting the information on google maps or wikipedia
+            if ("error_message" in data){
+                add_new_message(true, data["error_message"]);
+            }
+
+            else{
+                //We add the map and the test in two seperate messages
+                add_map_to_message(data["coordinates"]["lng"], data["coordinates"]["lat"], data["content"]["title"]);
+                add_new_message(true, data["content"]["extract"]);
+            }
+
+            message.value = "";
 
         }, true
     );

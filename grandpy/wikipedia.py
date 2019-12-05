@@ -1,5 +1,6 @@
 import requests
 import json
+from requests.exceptions import HTTPError
 
 
 
@@ -40,8 +41,11 @@ class Wikipedia:
             self.pageid = r_json["query"]["geosearch"][0]["pageid"]
 
         #If the get request failed
-        except:
-            print("An error occured while looking for wikipedia url")
+        except IndexError:
+            print("IndexError : the index is not in r_json dictionary")
+
+        except HTTPError:
+            print("HTTPError : the http request failed")
 
     
 
@@ -67,6 +71,9 @@ class Wikipedia:
             "extract" : r_json["query"]["pages"][str(self.pageid)]["extract"]
             }
 
-        except:
+        except IndexError:
             print("Couldn't get content of a page with a pageid")
+
+        except HTTPError:
+            print("The HTTP request failed")
 

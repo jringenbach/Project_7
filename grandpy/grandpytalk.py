@@ -55,12 +55,17 @@ class Grandpytalk:
         #Getting coordinates of location from Google Maps API
         maps = Maps(message)
         coordinates = maps.get_coordinates_from_locations()
-        grandpy_information.update({"coordinates" : coordinates})
 
-        #Getting information from Wikipedia Page
-        wiki = Wikipedia(coordinates)
-        wiki.get_pageid_from_coordinates()
-        wiki.get_content_from_pageid()   
-        grandpy_information.update({"content" : wiki.content})
+        if "error_message" in coordinates.keys():
+            return {"error_message" : self.error_message()}
 
-        return grandpy_information
+        else:
+            grandpy_information.update({"coordinates" : coordinates})
+
+            #Getting information from Wikipedia Page
+            wiki = Wikipedia(coordinates)
+            wiki.get_pageid_from_coordinates()
+            wiki.get_content_from_pageid()   
+            grandpy_information.update({"content" : wiki.content})
+
+            return grandpy_information

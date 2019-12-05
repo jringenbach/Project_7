@@ -1,4 +1,5 @@
 import requests
+from requests.exceptions import HTTPError
 import json
 
 class Maps:
@@ -20,10 +21,20 @@ class Maps:
             r = requests.get("https://maps.googleapis.com/maps/api/geocode/json", params=params)
             r_json = r.json()
             print(r_json)
-            return r_json["results"][0]["geometry"]["location"]
-            
-        except Exception as e:
-            print(e)
+            if r_json["results"] == []:
+                return {"error_message" : ""}
+            else:
+                return r_json["results"][0]["geometry"]["location"]
+
+        except IndexError:
+            print("Error during request : list index out of range")
+            return {"error_message" : ""}
+
+        except HTTPError:
+            print("Error during request : HTTP error")
+            return {"error_message" : ""}           
+
+
 
     
 

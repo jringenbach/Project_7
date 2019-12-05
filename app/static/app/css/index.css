@@ -4,9 +4,8 @@
     border : None;
     color : white;
     font-weight: 600;
-    height : 50px;
     margin-left : 10px;
-    margin-top : 0px;
+    height : 50px;
     opacity : 0.8;
     padding : 7px;
     width : 13.8%;
@@ -17,6 +16,7 @@
     opacity : 1;
 }
 
+/*Section containing the messages */
 #chat-box{
     background-color : #ffffff;
     display : flex;
@@ -27,23 +27,22 @@
     width : 70%;
 }
 
-/*Contains the text input and the send button */
-#question-container{
+/*Form in which we write the question to grandpy */
+#question-form{
+    align-items: center;
+    display : flex;
+    flex-direction : row;
+    flex-wrap : wrap;
     height : 10%;
     margin : auto;
+    margin-bottom : 10px;
     padding : 0px;
     width : 70%;
-}
-
-#question-form{
-    margin-left: 0px;
 }
 
 /*Text input where user asks questions to grandpy */
 #question-input{
     height : 50px;
-    margin-bottom : 10px;
-    margin-top : 15px;
     padding : 10px;
     width : 85%;
 }
@@ -73,7 +72,7 @@
     background-color : rgba(0, 129, 180, 0.7);
 }
 
-#map{
+.map{
     height : 200px;
     margin : 2%;
     width : 95%;
