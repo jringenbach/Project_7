@@ -7,44 +7,23 @@
 
 <!-- T'chat zone with grandpy-->
 {% block content %}
-    <section class="container-fluid" id="chat-box-container">
-        
-        <section class="row justify-content-end">
-
-            <!-- Grandpy messages-->
-            <div class="col-5 align-self-end grandpy-message">
-                <section>
-                    <p class="message">{{hello_message}}</p>
-                </section>
-            </div>
+    <section id="chat-box">
+        <section class="message" id="grandpy-message">
+            <p>{{hello_message}}</p>        
+        </section>
             
+        <section class="message" id="user-message">
+            <p>Bonjour Papy!</p>
         </section>
-
-        <section class="row justify-content-start">
-            <!-- User messages-->
-            <div class="col-5 align-self-start order-first user-message">
-                <section>
-                    <p class="message">Bonjour Papy!</p>
-                </section>
-            </div>
-        </section>
-
     </section>
 
-{% endblock %}
 
-
-
-<!-- Zone where users type their questions to grandpy-->
-{% block footer %}
-<div class="container-fluid" id="question-container">
-    <div class="row" id="question-container-row">
-        <form class="col-12" id="question-form" method="POST">
+    <div id="question-container">
+        <form id="question-form" method="POST">
             <input type="text" id="question-input" placeholder="Une question pour papy?">
-            <button type="submit" class="btn btn-primary" id="button-submit">Questionner papy</button>
+            <button type="submit" id="button-submit">Questionner papy</button>
         </form>
     </div>
-</div>
 
 {% endblock %}
 
@@ -53,3 +32,4 @@
 <script src="{{ url_for('static', filename='app/js/leaflet.js') }}"></script>
 <script src="{{ url_for('static', filename='app/js/index.js') }}"></script>
 {% endblock %}
+

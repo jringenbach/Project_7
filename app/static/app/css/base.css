@@ -4,56 +4,34 @@
 
 body{
     background-color : rgb(118, 205, 248);
+    display : flex;
+    flex-direction : column;
     height : 100vh;
-}
-
-#title-navbar{
-    color : white;
-    font-weight : 600;
-    margin-left : 2%;
-}
-
-/*Navigation bar inside app-header */
-#navigationbar{
-    /*background-color : #123C69;*/
-    background-color : rgb(59, 104, 219);
-    border-bottom : 1px solid black;
-}
-
-/*Page containing app-header, app-content and app-footer */
-.page{
-    display: grid;
-    grid-auto-columns: 5%;
-    grid-auto-rows : 5%;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    height: 100%;
-}
-
-/*Zone where user types its questions and send them to grandpy */
-.app-footer{
-    grid-column-start : 3;
-    grid-column-end : 17;
-    grid-row-start: 18;
-    grid-row-end : 20;
 }
 
 /*Zone where the contents of the web pages are displayed */
 .app-content{
     background-color : white;
     border : 1px solid black;
-    grid-column-start : 3;
-    grid-column-end : 17;
-    grid-row-start: 1;
-    grid-row-end : 18;
+    display : flex;
+    flex-direction : column;
+    height : 88%;
+    justify-content: center;
 }
 
-/*Zone containing the navigation bar */
-.app-header{
-    grid-column-start : 1;
-    grid-column-end : 20;
-    grid-row-start : 0;
-    grid-row-end : 1;
+
+header, footer{
+    align-items : center;
+    background-color : rgb(240, 133, 34);
+    display : flex;
+    height : 6%;
+    justify-content : center;
+}
+
+header h1, footer p{
+    color : white;
+    font-size : 1.5em;
+    margin : auto;
 }
 
 

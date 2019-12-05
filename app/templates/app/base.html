@@ -9,26 +9,21 @@
         {% block css_scripts %}{% endblock %}
     </head>
     <body>
-        <div class="page">
-
-            <div class="app-header">
-                <!--Navigation bar of the web application : grandpybot-->
-                <nav class="navbar" id="navigationbar">
-                    <a class="navbar-brand" id="title-navbar" href="/">Grandpybot</a>
-                </nav>
-            </div>
+            <header>
+                <h1>Grandpy : le papy robot</h1>
+            </header>
             
-            <div class="app-content">
+            <section class="app-content">
                 {% block content %}
                 {% endblock %}
-            </div>
+            </section>
             
-            <div class="app-footer">
+            <footer>
                 {% block footer %}
+                    <p>@Openclassrooms : grandpy by Julien Ringenbach</p>
                 {% endblock %}
-            </div>
+            </footer>
 
-        </div>
 
 
         <!--Javascript scripts-->
