@@ -65,6 +65,7 @@ function add_new_message(papy_is_talking, text_message){
     //We add everything to the DOM
     new_message.appendChild(new_text_node);
     chat_box.appendChild(new_message);
+    new_message.scrollIntoView();
 }
 
 //We get the form
