@@ -1,7 +1,4 @@
 flask
 requests
 gunicorn
-random
-json
-re
 pytest
