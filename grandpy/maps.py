@@ -1,6 +1,7 @@
 import requests
 from requests.exceptions import HTTPError
 import json
+import os
 
 class Maps:
 
@@ -15,7 +16,7 @@ class Maps:
         """Get longitude and latitude of a location depending by its name"""
 
         API_key = self.read_API_Key("api_key_google_maps.txt")
-        params = {"address" : self.message, "key" : API_key}
+        params = {"address" : self.message, "key" : os.getenv("GOOGLE_MAPS_API_KEY")}
 
         try:
             r = requests.get("https://maps.googleapis.com/maps/api/geocode/json", params=params)
