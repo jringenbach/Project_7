@@ -32,7 +32,6 @@
     align-items: center;
     display : flex;
     flex-direction : row;
-    flex-wrap : wrap;
     height : 10%;
     margin : auto;
     margin-bottom : 10px;
@@ -76,4 +75,33 @@
     height : 200px;
     margin : 2%;
     width : 95%;
+}
+
+@media all and (max-width : 1280px){
+    #question-form{
+        display : flex;
+        flex-direction : column;
+        height : auto;
+        margin-top : 10px;
+    }
+
+    #button-submit{
+        height : auto;
+        margin-bottom : 20px;
+        margin-left : 0px;
+        width : 100%;
+    }
+
+    #question-input{
+        margin-bottom : 10px;
+        width : 100%;
+    }
+
+    /*.grandpy-message{
+        align-self: center;
+    }
+
+    .user-message{
+        align-self : center;
+    }*/
 }

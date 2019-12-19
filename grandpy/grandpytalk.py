@@ -16,7 +16,7 @@ class Grandpytalk:
         liste_intro_phrase = [
             "Que veux-tu savoir mon petit?",
             "Ravi de te voir mon enfant. Je peux t'aider?",
-            "J'ai tant de souvenirs à partager, dis-moi ce que veux entendre?",
+            "J'ai tant de souvenirs à partager, dis-moi ce que tu veux entendre?",
             "Puis-je faire quelque chose pour toi mon petit?",
             "Dans ma folle jeunesse, j'ai visité plein de lieux. Dis-moi le lieu que tu voudrais me voir te raconter!",
             "C'est une belle journée pour te parler du monde, n'est-ce pas? De quoi veux-tu que je te parle?",
