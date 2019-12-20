@@ -66,7 +66,7 @@ class Parser:
         
         message : string"""
 
-        check_phrase = r"(adresse de|ou se trouve|informations sur|Comment se rendre a|Parle moi de) (?P<lieu>[^,.;:?]+)[.,;:?]*"
+        check_phrase = r"(adresse de|ou se trouve|informations sur|comment se rendre a|parle moi de|ou est|ou se situe) (?P<lieu>[^,.;:?]+)[.,;:?]*"
         message_parsed = re.search(check_phrase, message)
 
         if message_parsed is not None:
